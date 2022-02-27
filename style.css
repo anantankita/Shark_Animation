@@ -1,0 +1,232 @@
+body {
+    background-color: #084594;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    height: 200px;
+    width: 350px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.shark {
+    background-color: #085E7D;
+    height: 90px;
+    width: 140px;
+    border-radius: 0 80px 80px 0;
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+    animation: sleep 2s infinite; 
+    transform: rotate(-10deg);
+}
+
+.body {
+    background-color: #085E7D;
+    height: 90px;
+    width: 230px;
+    position: absolute;
+    right: 65px;
+    bottom: 0;
+    border-radius: 100px 60px 0 0;
+    animation: sleep 2s infinite;
+    transform-origin: bottom right;
+}
+
+@keyframes sleep {
+    50% {
+        transform: scale(0.9, 1.05);
+    }
+}
+
+.body:before {
+    content: "";
+    position: absolute;
+    background-color: #085E7D;
+    height: 25px;
+    width: 40px;
+    border-radius: 0px 0px 360px 60px;
+    top: 88px;
+    left: 100px;
+    box-shadow: 45px -6px #085E7D; 
+    transform: rotate(1deg);
+}
+
+.dorsalfin {
+    height: 55px;
+    width: 50px;
+    background-color: #085E7D;
+    position: absolute;
+    bottom: 90px;
+    left: 2px;
+    border-radius: 10px 150px 35px 0;
+    transform: rotate(-2deg);
+}
+
+.eyeclose,
+.eyeclose:before {
+    height: 12px;
+    width: 15px;
+    border: 2px solid black;
+    position: absolute;
+    border-radius: 0 0 15px 15px;
+    border-top: none;
+}
+.eyeclose {
+    top: 18px;
+    left: 80px;
+}
+
+.mouth {
+    background-color: #151D3B;
+    height: 20px;
+    width: 35px;
+    position: absolute;
+    border-radius: 0 0 15px 15px;
+    top: 50px;
+    left: 100px;
+    animation: mouth-move 2s infinite;
+    transform-origin: top;
+}
+
+@keyframes mouth-move {
+    50% {
+        transform: scaleY(0.7);
+    }
+}
+
+.napbubble {
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    border-radius: 50px 50px 50px 5px;
+    left: 120px;
+    top: 20px;
+    animation: bubble-scale 2s infinite;
+}
+
+@keyframes bubble-scale {
+    50% {
+        transform: scale(1.6);
+    }
+}
+
+.tail {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    right: 245px;
+    top: 30px;
+    background-color: #085E7D;
+    border-radius: 90%;
+    transform: rotate(40deg);
+}
+
+.lowertail {
+    top: 60px;
+    transform: rotate(-40deg);
+}
+
+.line {
+    height: 18px;
+    width: 312px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 43px;
+    left: 0px;
+    transform: rotate(-10deg);
+    animation: line 2s infinite;
+}
+
+@keyframes line {
+    50% {
+        transform: scaleX(0.7);
+    }
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+    left: 0;
+    background: url(wave1.png);
+    animation: animate 10s linear infinite;
+}
+
+.wave:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    bottom: 0;
+    left: 0;
+    background: url(wave1.png);
+    opacity: 0.2;
+    animation-delay: -5s;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 1360px;
+    }
+}
+
+@keyframes animate-reverse {
+    0% {
+        background-position: 1360px;
+    }
+    100% {
+        background-position: 0;
+    }
+}
+
+.bubble {
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+    margin-right: 50px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: .50;
+    width: 40px;
+    height: 40px;
+    animation: up 4s infinite;
+}
+
+.b1 {
+    left: 300px;
+    animation: up 3s infinite;
+}
+
+.b2 {
+    left: 800px;
+    opacity: .3;
+    animation: up 8s infinite;
+}
+
+.b3 {
+    left: 1250px;
+    animation: up 4s infinite;
+}
+
+.b4 {
+    left: 30px;
+    opacity: .3;
+    animation: up 6s infinite;
+}
+
+@keyframes up {
+    100% {
+        transform: translateY(-750px);
+    }
+}
